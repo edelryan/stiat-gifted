@@ -62,14 +62,10 @@ define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/stiat/qua
 			image: 'https://baranan.github.io/minno-tasks/images/' // Not used here, but required field
 		}
 		  },
-
-  // Add this block:
-  onTrialEnd: function(trialData, trialIndex, blockIndex, trialObj, response) {
-    if (trialData.rt > 10000) {
-      alert('Please try to respond more quickly.');
-    }
+onTrialEnd: function(trialData, trialIndex, blockIndex, trialObj, response) {
+  if (trialData.rt > 10000) {
+    alert('Please respond more quickly if you can!');
   }
-
 });
 	});
 });
