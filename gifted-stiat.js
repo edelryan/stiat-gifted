@@ -1,5 +1,6 @@
-define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/stiat/qualtrics/qstiat6.js'], function(APIConstructor, stiatExtension){
-	
+define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/stiat/qualtrics/qstiat6.js'], 
+function(APIConstructor, stiatExtension){
+
 	var API = new APIConstructor();
 
 	return stiatExtension({
@@ -59,13 +60,15 @@ define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/stiat/qua
 		},
 
 		base_url: {
-			image: 'https://baranan.github.io/minno-tasks/images/' // Not used here, but required field
+			image: 'https://baranan.github.io/minno-tasks/images/'
+		},
+
+		// ✅ ADD THIS INSIDE THE stiatExtension config:
+		onTrialEnd: function(trialData, trialIndex, blockIndex, trialObj, response) {
+			if (trialData.rt > 10000) {
+				alert('Please respond more quickly if you can!');
+			}
 		}
-		  },
-onTrialEnd: function(trialData, trialIndex, blockIndex, trialObj, response) {
-  if (trialData.rt > 10000) {
-    alert('Please respond more quickly if you can!');
-  }
-});
+
 	});
 });
