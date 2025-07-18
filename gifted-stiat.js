@@ -62,8 +62,7 @@ function(APIConstructor, stiatExtension){
 		base_url: {
 			image: 'https://baranan.github.io/minno-tasks/images/'
 		},
-
-		// ✅ ADD THIS INSIDE THE stiatExtension config:
+		
 		onTrialEnd: function(trialData, trialIndex, blockIndex, trialObj, response) {
 			if (trialData.rt > 10000) {
 				alert('Please respond more quickly if you can!');
