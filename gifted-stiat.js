@@ -24,37 +24,37 @@ function(APIConstructor, stiatExtension){
 		},
 
 		attribute1: {
-			name: 'Negative',
+			name: 'Self-Sufficient',
 			title: {
-				media: {word: 'Negative'},
+				media: {word: 'Self-Sufficient'},
 				css: {color:'#31b404','font-size':'2em'},
 				height: 7
 			},
 			media: [
-				{word: 'Arrogant'},
-				{word: 'Isolated'},
-				{word: 'Awkward'},
-				{word: 'Weird'},
-				{word: 'Entitled'},
-				{word: 'Selfish'}
+				{word: 'Effortless learner'},
+				{word: 'Quick learner'},
+				{word: 'Self-teaching'},
+				{word: 'Resilient'},
+				{word: 'High-achieving'},
+				{word: 'Needs no help'}
 			],
 			css: {color:'#31b404','font-size':'3em'}
 		},
 
 		attribute2: {
-			name: 'Positive',
+			name: 'Needing Support',
 			title: {
-				media: {word: 'Positive'},
+				media: {word: 'Needing Support'},
 				css: {color:'#31b404','font-size':'2em'},
 				height: 7
 			},
 			media: [
-				{word: 'Motivated'},
-				{word: 'Curious'},
-				{word: 'Creative'},
-				{word: 'Helpful'},
-				{word: 'Hardworking'},
-				{word: 'Friendly'}
+				{word: 'Anxious'},
+				{word: 'Overwhelmed'},
+				{word: 'Confused'},
+				{word: 'Struggling'},
+				{word: 'Vulnerable'},
+				{word: 'Uncertain'}
 			],
 			css: {color:'#31b404','font-size':'3em'}
 		},
@@ -63,7 +63,6 @@ function(APIConstructor, stiatExtension){
 			image: 'https://baranan.github.io/minno-tasks/images/'
 		},
 
-		// ✅ Improved: handles both rt and latency fields
 		onTrialEnd: function(trialData, trialIndex, blockIndex, trialObj, response) {
 			var rt = trialData.rt || trialData.latency;
 			if (rt && rt > 10000) {
